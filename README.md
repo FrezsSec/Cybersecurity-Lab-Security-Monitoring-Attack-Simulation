@@ -6,7 +6,7 @@ I have successfully built a lab environment centered around Active Directory, Sp
 
 - **Virtualization:** VirtualBox
 - **Client Machines:**
-  - Windows Server (Active Directory)
+  - Windows Server 2022 (Active Directory)
   - Target Windows 10 Machine
   - Kali Linux (Attacking Machine)
 - **Security Monitoring:** Splunk (Installed on )
@@ -49,6 +49,7 @@ In this section, we will cover the installation steps for each component of our 
 7. Start the virtual machine and then click **"Install Now"**. When presented with the **"Activate Windows"** screen, select **"I don't have a product key"** and choose **"Windows 10 Pro"** for the edition. Next, accept the license terms. Then, select **"Custom: Install Windows only (advanced)"** and click **"Next"**. Windows will now begin the installation process.
 
 ## Installing Kali Linux
+  
 1. Visit the [Kali Linux](https://www.kali.org/get-kali/#kali-platforms) download page and select the Pre-built Virtual Machine.
 
    ![1](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/1756a760-ed35-4c7a-bb8a-8d39910e8833)
@@ -59,4 +60,7 @@ In this section, we will cover the installation steps for each component of our 
 5. Open VirtualBox, select the imported Kali Linux VM, and click "Start".
 6. Use the default credentials (username: **kali**, password: **kali**) to log in.
  
-    
+## Installing Windows Server 2022  
+
+1. Navigate to the[Microsoft Evaluation Center](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2022) and download the ISO file.
+2. Fill in the required information and select "64-bit Edition" under ISO downloads.
