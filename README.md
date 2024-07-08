@@ -171,3 +171,27 @@ To create a NAT network and configure network settings in VirtualBox for ensurin
     ```sh
     sudo mount -t vboxsf -o uid=1000,gid=1000 <shared_folder_name> share/
     ```
+   ![20](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/b965796f-aed2-42ef-917a-db566efdaad4)
+
+12. Change the directory to "share" and install Splunk using dpkg.
+
+    ```sh
+    sudo dpkg -i splunk*.deb
+    ```
+   ![23](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/ed4fe38c-3428-4b30-9fff-f8f06526c761)
+
+13. After the installation is complete, navigate to the Splunk installation directory on our server located at `/opt/splunk`.
+14. Switch to the Splunk user using the command:
+
+    ```sh
+    sudo -u splunk bash
+    ```
+15. Change to the `bin` directory and then run the command: `./splunk start`, and subsequently agree to the license.
+16. Choose an administrator username and password.
+17. After completing the installation, exit the Splunk user session by typing 'exit'. Then navigate to the 'bin' directory and run:
+   
+    ```sh
+    sudo ./splunk enable boot-start -user splunk
+    ```
+
+    ![24](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/d3b3c068-4d45-42ac-ab40-81f29b721d53)
