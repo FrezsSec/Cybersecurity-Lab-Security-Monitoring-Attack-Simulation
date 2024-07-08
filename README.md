@@ -110,11 +110,40 @@ To create a NAT network and configure network settings in VirtualBox for ensurin
 - Click on "Tools" in VirtualBox, then select Bullet Points.
 - Choose the "Network" option.
 
-   ![13](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/995e1bd3-d2ff-4c4f-9119-0cea741165ef)
+   ![13](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/b0d1257e-6071-4df5-a48a-8e7e918f2990)
 
 - Select the "NAT Networks" tab.
 - Click on "Create".
 - Provide a name and an IPv4 prefix for the new NAT network.
+- Leave "Enable DHCP" checked.
 - Click "Apply" to save the configuration.
 
    ![12](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/1bb575bf-0e5a-4663-9683-0d44f1ddb674)
+
+- For each virtual machine, navigate to the settings and under the network settings, choose "NAT Network" for Adapter 1.
+
+   ![14](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/5edb66d3-f840-44f5-b352-ea79547de07e)
+
+## Setting up static IPs
+
+### Splunk Server
+    
+  - Head over to the Splunk server (Ubuntu Server) and run `sudo nano /etc/netplan/00-installer-config.yaml`.
+  - Configure the file as follows:
+    
+     ![15](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/a786b255-8b4d-4fb4-90f5-9f51c5e5f0a8)
+
+
+ - Save the changes and then run `sudo netplan apply`.
+ - Now, run `ip a` to view the IP assigned to the server.
+
+    ![16](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/ac1877dc-e52e-43f5-81ab-bdbe12c15457)
+
+# Installing Splunk
+
+1. On your host machine, navigate to [splunk.com](https://www.splunk.com/), sign up, and log in.
+2. Go to the "Products" section and select "Free Trials & Downloads."
+3. Scroll to Splunk Enterprise and select "Get My Free Trial."
+4. Select Linux as the operating system and download the .deb file.
+
+ 
