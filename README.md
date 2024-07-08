@@ -9,7 +9,7 @@ I have successfully built a lab environment centered around Active Directory, Sp
   - Windows Server 2022 (Active Directory)
   - Target Windows 10 Machine
   - Kali Linux (Attacking Machine)
-- **Security Monitoring:** Splunk (Installed on )
+- **Security Monitoring:** Splunk (Installed on Ubuntu Server )
 - **Attack Simulation:** Atomic Red Team and Kali linux
 - **Telemetry and Logging:**
   - Sysmon (Installed on Windows Server and Target Windows Machine)
@@ -33,7 +33,7 @@ In this section, we will cover the installation steps for each component of our 
     ```
  - Double-click the downloaded installer file and follow the on-screen prompts to complete the installation, including any necessary dependencies like Microsoft Visual C++ 2019. Once installed, VirtualBox will launch automatically.
 
-## Creating a Windows 10 Virtual Machine
+## Installing Windows 10 Virtual Machine
 
 1. Navigate to this [link](https://www.microsoft.com/en-us/software-download/windows10) and download the Media Creation Tool to generate the Windows 10 ISO image.
 2. Open VirtualBox and click "New" to create a new virtual machine. Select a name for the virtual machine (e.g., Windows 10). Then browse to the ISO image folder, double-click it, and tick "Skip unattended installation." Finally, click "Next."
@@ -85,5 +85,12 @@ In this section, we will cover the installation steps for each component of our 
    ![8](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/77c4a559-61c7-485b-9e2e-ec6ca2ed5110)
 
 9. After the setup is completed, create a secure password and click on "Finish."
+10. Log in using the password you just created.
 
+## Installing Ubuntu Server
+
+1. Go to [ubuntu.com](https://ubuntu.com/), navigate to the 'Products' section, and choose 'Ubuntu Server'. Download version 22.04 from there.
+2. The installation process is similar to that of other virtual machines. Set the memory to 8GB, processors to 2, and allocate 100GB for the hard disk.
+3. Start the virtual machine.
+4. Proceed with the installation. When prompted for profile setup, create a username and password.
 
