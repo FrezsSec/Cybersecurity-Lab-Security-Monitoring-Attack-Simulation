@@ -102,3 +102,19 @@ In this section, we will cover the installation steps for each component of our 
    ![11](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/246bb10e-d5e6-4c4b-a609-ff57c0f7197a)
 
 8. After logging in, run the command `sudo apt-get update && sudo apt-get upgrade -y` to update and upgrade your system packages.
+
+## Creating NAT Network
+
+To create a NAT network and configure network settings in VirtualBox for ensuring that virtual machines can be on the same network with internet access, follow these steps:
+
+- Click on "Tools" in VirtualBox, then select Bullet Points.
+- Choose the "Network" option.
+
+   ![13](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/995e1bd3-d2ff-4c4f-9119-0cea741165ef)
+
+- Select the "NAT Networks" tab.
+- Click on "Create".
+- Provide a name and an IPv4 prefix for the new NAT network.
+- Click "Apply" to save the configuration.
+
+   ![12](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/1bb575bf-0e5a-4663-9683-0d44f1ddb674)
