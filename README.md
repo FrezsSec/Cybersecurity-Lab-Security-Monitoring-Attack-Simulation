@@ -145,5 +145,29 @@ To create a NAT network and configure network settings in VirtualBox for ensurin
 2. Go to the "Products" section and select "Free Trials & Downloads."
 3. Scroll to Splunk Enterprise and select "Get My Free Trial."
 4. Select Linux as the operating system and download the .deb file.
+5. Go back to the Splunk virtual machine and run the following command to install the Guest Additions for VirtualBox:
+  
+   ```sh
+   sudo apt-get install virtualbox-guest-additions-iso
+   sudo apt-get install virtualbox-guest-utils
+   ```
+6. On the top of the VirtualBox window, click on Devices --> Shared Folders --> Shared Folders Settings.
+7. Add the folder where the Splunk installer is located, then check "Read-only," "Auto-mount," and "Make Permanent," and click OK.
+   
+    ![19](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/3e3c3fc8-66ba-444c-bb27-8567a68064f1)
 
- 
+8. Back on the Splunk virtual machine, run `sudo reboot`.
+9. After reboot, add our user to the vboxsf group:
+
+   ```sh
+   sudo adduser <username> vboxsf
+   ```
+10. Create a new directory called "share":
+
+    ```mkdir share```
+
+11. Mount our shared folder to the directory called "share":
+  
+    ```sh
+    sudo mount -t vboxsf -o uid=1000,gid=1000 <shared_folder_name> share/
+    ```
