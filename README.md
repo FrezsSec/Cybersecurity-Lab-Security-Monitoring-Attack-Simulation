@@ -62,5 +62,28 @@ In this section, we will cover the installation steps for each component of our 
  
 ## Installing Windows Server 2022  
 
-1. Navigate to the[Microsoft Evaluation Center](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2022) and download the ISO file.
+1. Navigate to the [Microsoft Evaluation Center](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2022) and download the ISO file.
 2. Fill in the required information and select "64-bit Edition" under ISO downloads.
+3. Click on the "New" icon in VirtualBox, provide a name for your virtual machine (e.g., "ADDC01"), select the ISO image you downloaded, and choose "Skip unattended installation".
+
+   ![3](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/fa2565ef-2814-454b-a427-893b84d888ea)
+
+4. Assign 4GB to memory, leave the hard disk at 50GB, then select "Finish".
+
+   ![4](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/1544a40c-ad42-4a12-af1a-29dbe5ccd92c)
+
+   ![5](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/6c5c19b0-e2d1-43ca-ac54-0f9fecf092da)
+
+5. Start the virtual machine and then select "Install now."
+6. Choose "Windows Server 2022 Standard Evaluation (Desktop Experience)" as the operating system and hit next.
+
+   ![6](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/94c5c869-1196-486a-b734-9c827e8c5eab)
+
+7. Accept the terms and agreements.
+8. Select "Custom" for installation and hit next.
+
+   ![8](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/77c4a559-61c7-485b-9e2e-ec6ca2ed5110)
+
+9. After the setup is completed, create a secure password and click on "Finish."
+
+
