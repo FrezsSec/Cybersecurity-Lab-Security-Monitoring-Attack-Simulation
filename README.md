@@ -93,4 +93,12 @@ In this section, we will cover the installation steps for each component of our 
 2. The installation process is similar to that of other virtual machines. Set the memory to 8GB, processors to 2, and allocate 100GB for the hard disk.
 3. Start the virtual machine.
 4. Proceed with the installation. When prompted for profile setup, create a username and password.
+5. Once the installer is complete, select "Reboot Now."
+    
+    ![10](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/e8eb777b-8428-4674-89bc-0f7a1247c433)
+6. If you encounter an error unmounting the CD-ROM, simply press Enter.
+7. Once Ubuntu finishes rebooting, you will be presented with the login screen. Use the account you created earlier to log in.
 
+   ![11](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/246bb10e-d5e6-4c4b-a609-ff57c0f7197a)
+
+8. After logging in, run the command `sudo apt-get update && sudo apt-get upgrade -y` to update and upgrade your system packages.
