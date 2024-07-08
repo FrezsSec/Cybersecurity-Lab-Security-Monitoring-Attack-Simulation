@@ -126,7 +126,7 @@ To create a NAT network and configure network settings in VirtualBox for ensurin
 
 ## Setting up static IPs
 
-### Splunk Server
+#### Splunk Server
     
   - Head over to the Splunk server (Ubuntu Server) and run `sudo nano /etc/netplan/00-installer-config.yaml`.
   - Configure the file as follows:
@@ -139,7 +139,11 @@ To create a NAT network and configure network settings in VirtualBox for ensurin
 
     ![16](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/ac1877dc-e52e-43f5-81ab-bdbe12c15457)
 
-# Installing Splunk
+#### Target Windows 
+
+ -
+ 
+## Installing Splunk
 
 1. On your host machine, navigate to [splunk.com](https://www.splunk.com/), sign up, and log in.
 2. Go to the "Products" section and select "Free Trials & Downloads."
@@ -195,3 +199,11 @@ To create a NAT network and configure network settings in VirtualBox for ensurin
     ```
 
     ![24](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/d3b3c068-4d45-42ac-ab40-81f29b721d53)
+
+
+## Installing Splunk Universal Forwarder 
+
+### Windows Installation
+
+1. On the Windows machine, change the hostname to "target"
+
