@@ -46,7 +46,7 @@ In this section, we will cover the installation steps for each component of our 
 
 ![6](https://github.com/FrezsSec/Setting-Up-SOC-Automation-with-Wazuh-TheHive-and-Shuffle/assets/173344802/f89a831c-f26b-4866-975d-ceb05f7b76ab)
 
-7. Start the virtual machine and then click **"Install Now"**. When presented with the **"Activate Windows"** screen, select **"I don't have a product key"** and choose **"Windows 10 Pro"** for the edition. Next, accept the license terms. Then, select **"Custom: Install Windows only (advanced)"** and click **"Next"**. Windows will now begin the installation process.
+6. Start the virtual machine and then click **"Install Now"**. When presented with the **"Activate Windows"** screen, select **"I don't have a product key"** and choose **"Windows 10 Pro"** for the edition. Next, accept the license terms. Then, select **"Custom: Install Windows only (advanced)"** and click **"Next"**. Windows will now begin the installation process.
 
 ## Installing Kali Linux
   
@@ -318,7 +318,7 @@ source = XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 
 ![9](https://github.com/FrezsSec/Setting-Up-SOC-Automation-with-Wazuh-TheHive-and-Shuffle/assets/173344802/37251597-a518-4c87-849a-5f4a5795a9d4)
 
-7. Verify that Sysmon has been installed correctly by checking the Services application.
+9. Verify that Sysmon has been installed correctly by checking the Services application.
 
 ### Windows Server Installation
 
@@ -330,8 +330,17 @@ source = XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 2. In the top right corner, click **Manage**.
 3. Select **Add Roles and Features**, then hit **Next**.
 
-    ![40](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/3df4c46b-db34-4185-874d-06190300a9c9)
+    ![42](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/87159e14-0bb4-4baa-981c-9aabb0647821)
 
-5. Make sure **Role-based or feature-based installation** is checked.
+
+4. Make sure **Role-based or feature-based installation** is checked.Then select 'Next'.
 
    ![41](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/462d28e0-1f3b-4a82-976b-3495f5968f72)
+
+5. For the roles, select **Active Directory Domain Services**, then click on **Add Features**.
+
+   ![43](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/1fa947ff-2896-4238-8a2b-3e00f60a0aed)
+
+7. Continue clicking **Next** until you reach the **Install** button.
+
+   ![44](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/5f4c7335-afd4-40d1-9f8c-ff22437e578d)
