@@ -341,6 +341,17 @@ source = XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 
    ![43](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/1fa947ff-2896-4238-8a2b-3e00f60a0aed)
 
-7. Continue clicking **Next** until you reach the **Install** button.
+6. Continue clicking **Next** until you reach the **Install** button.
 
-   ![44](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/5f4c7335-afd4-40d1-9f8c-ff22437e578d)
+   ![45](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/985e6654-3413-4a3a-bae8-fce37da08de4)
+
+7. Click on the flag icon beside **Manage**, then click on **Promote this server to a domain controller**.
+
+   ![46](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/fcddd69c-0bee-451b-8792-87b87d6ba510)
+
+8. Select **Add a new forest** and provide a domain name (e.g., example.local). Then hit 'Next'.
+
+   ![47](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/25f3fe01-7214-4f94-af45-cd97f7f5e12a)
+
+9. Set a password.
+10. Continue clicking **Next** until you reach the **Install** button.
