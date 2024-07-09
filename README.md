@@ -141,8 +141,17 @@ To create a NAT network and configure network settings in VirtualBox for ensurin
 
 #### Target Windows 
 
- -
- 
+ - On the target Windows machine go to **Network & Internet Settings**
+ - Click on **Change adapter options**.
+ - Right-click the network adapter and select **Properties**.
+ - Double-click on **Internet Protocol Version 4 (TCP/IPv4)**.
+ - Click on **Properties**.
+ - Select **Use the following IP address** and set a static IP.
+ - Hit **OK**.
+
+   ![27](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/25a65bb4-1300-4fbb-83ae-20a34c6f1a0c)
+
+  
 ## Installing Splunk
 
 1. On your host machine, navigate to [splunk.com](https://www.splunk.com/), sign up, and log in.
@@ -206,4 +215,13 @@ To create a NAT network and configure network settings in VirtualBox for ensurin
 ### Windows Installation
 
 1. On the Windows machine, change the hostname to "target"
+2. Go to [splunk.com](https://www.splunk.com) and log in.
+3. Navigate to **Products** and select **Free Trials & Downloads**.
+4. Scroll down to **Universal Forwarder** and download the forwarder for the Windows operating system.
+   
+  ![28](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/9d75325b-039c-4b3c-ac71-6eb9b3157e97)
 
+5. Once the download is complete, double-click the `.msi` file.
+6. Select an on-premises Splunk Enterprise instance. Go through the installation process. For the username, give "admin", skip the deployment server, and for the receiving indexer, use your Splunk server IP with the default port 9997.
+
+    ![29](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/f6c8d694-bc88-4028-870a-09f16dbd4975)
