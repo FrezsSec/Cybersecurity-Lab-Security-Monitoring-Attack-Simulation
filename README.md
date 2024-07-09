@@ -277,12 +277,13 @@ source = XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 
    ![33](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/aae98519-545b-419f-8554-78a642c27a2b)
 
+4. Enable the Splunk server to receive the data. Go to Settings, click on "Forwarding and receiving", under "Receive data" click on "Configure receiving", then click on "New Receiving Port", enter "9997", and hit "Save".
 
+   ![34](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/bebcc78a-15f9-42e1-bf83-275ff6c2007d)
 
+5. Click on "Apps" in the top left corner, then select "Search & Reporting". Under the search bar, type `index=endpoint` and click on the search button. Now you can see some events
 
-
-
-
+   ![35](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/2e9158b9-3f85-4a80-97b4-15898585f38f)
 
 
 
