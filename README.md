@@ -151,6 +151,12 @@ To create a NAT network and configure network settings in VirtualBox for ensurin
 
    ![27](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/25a65bb4-1300-4fbb-83ae-20a34c6f1a0c)
 
+#### Windows Server
+
+- Follow the same steps as outlined for the Target Windows machine to set a static IP address for the Windows Server.
+
+  ![37](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/79f4d29b-0464-4154-86a6-550a62500934)
+
   
 ## Installing Splunk
 
@@ -286,29 +292,13 @@ source = XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
    ![35](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/2e9158b9-3f85-4a80-97b4-15898585f38f)
 
 
+### On Windows Server
 
+1. On the Windows Server, change the computer name to ADDC01.
+2. Install the Splunk Universal Forwarder and configure the `inputs.conf` file the same way as on the target Windows machine.
+3. Then, go to the Splunk server web portal at `192.168.10.10:8000`, click on "Apps" in the top left corner, and select "Search & Reporting." Under the search bar, type `index=endpoint`. This time, you will see two hosts.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+   ![39](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/b4cede0a-56d6-47e6-b51c-38793569c36a)
 
 
 ## Installing Sysmon 
@@ -330,4 +320,18 @@ source = XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 
 7. Verify that Sysmon has been installed correctly by checking the Services application.
 
-   
+### Windows Server Installation
+
+- Follow the same steps as outlined above for the Windows virtual machine to install Sysmon on the Windows Server.
+
+## Install Active Directory on Windows Server
+
+1. Go to **Server Manager**.
+2. In the top right corner, click **Manage**.
+3. Select **Add Roles and Features**, then hit **Next**.
+
+    ![40](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/3df4c46b-db34-4185-874d-06190300a9c9)
+
+5. Make sure **Role-based or feature-based installation** is checked.
+
+   ![41](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/462d28e0-1f3b-4a82-976b-3495f5968f72)
