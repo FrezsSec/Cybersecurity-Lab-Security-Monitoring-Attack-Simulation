@@ -268,6 +268,44 @@ source = XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 
 #### Configuring Index on Splunk Server
   
+1. Head over to the Splunk server web portal at 192.168.10.10:8000, and log in with the credentials we created during the Splunk installation on our Ubuntu server.
+
+   ![31](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/59a2b395-d640-4bb3-b6d0-4da966496232)
+
+2. Go to Settings at the top and select Indexes.
+3. Click on "New Index" to create an index called "endpoint" because in our inputs.conf file, all events are sent to an index named "endpoint".
+
+   ![33](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/aae98519-545b-419f-8554-78a642c27a2b)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -289,5 +327,6 @@ source = XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 
 ![9](https://github.com/FrezsSec/Setting-Up-SOC-Automation-with-Wazuh-TheHive-and-Shuffle/assets/173344802/37251597-a518-4c87-849a-5f4a5795a9d4)
 
-
 7. Verify that Sysmon has been installed correctly by checking the Services application.
+
+   
