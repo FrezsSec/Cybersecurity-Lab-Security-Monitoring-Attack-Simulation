@@ -212,7 +212,7 @@ To create a NAT network and configure network settings in VirtualBox for ensurin
 
 ## Installing Splunk Universal Forwarder 
 
-### Windows Installation
+### On Windows 10
 
 1. On the Windows machine, change the hostname to "target"
 2. Go to [splunk.com](https://www.splunk.com) and log in.
@@ -225,3 +225,69 @@ To create a NAT network and configure network settings in VirtualBox for ensurin
 6. Select an on-premises Splunk Enterprise instance. Go through the installation process. For the username, give "admin", skip the deployment server, and for the receiving indexer, use your Splunk server IP with the default port 9997.
 
     ![29](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/f6c8d694-bc88-4028-870a-09f16dbd4975)
+
+### Configuring Splunk Universal Forwarder on Windows 10
+
+We need to instruct the Splunk Universal Forwarder on what data to send to our Splunk server. To do this, we must configure a file called `inputs.conf` that is located under `C:\Program Files\SplunkUniversalForwarder\etc\system\default`.
+1. Open Notepad with administrative privileges.
+2. Copy the content of `inputs.conf` and paste it into Notepad.
+3. Modify the contents as follows:
+
+```sh
+[WinEventLog://Application]
+index = endpoint
+disabled = false
+
+[WinEventLog://Security]
+index = endpoint
+disabled = false
+
+[WinEventLog://System]
+index = endpoint
+disabled = false
+
+[WinEventLog://Microsoft-Windows-Sysmon/Operational]
+index = endpoint
+disabled = false
+renderXml = true
+source = XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+```
+
+4. Save the modified file as `inputs.conf` under `C:\Program Files\SplunkUniversalForwarder\etc\system\local\`.
+
+- **Note:** Do not change the configuration file under the `default` directory to avoid potential issues.
+
+5. After updating the `inputs.conf` file, restart the Universal Forwarder services:
+
+   - Open the Services application with administrative privileges.
+   - Search for "SplunkForwarder" in the list of services.
+   - Double-click on "SplunkForwarder" to open its Properties window. Go to the Log On tab.
+   - Select the "Local System account" option. Click Apply and then OK.
+   - Right-click on "splunkforwarder" again in the Services window and select Restart.
+   - If you get a warining that windows could not stop the SplunkForwarder, hit OK and start the service.
+
+#### Configuring Index on Splunk Server
+  
+
+
+
+
+## Installing Sysmon 
+
+### Windows Installation
+
+1. On your Windows virtual machine, open a web browser and navigate to the official Microsoft Sysinternals [website](https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon).
+2. Download Sysmon from the website.
+3. Navigate to the [GitHub page](https://github.com/olafhartong/sysmon-modular) where `sysmonconfig.xml` is available and download it to your Windows virtual machine.
+4. Locate the downloaded Sysmon ZIP file and extract its contents.
+5. Open Powershell with administrative privileges.
+6. Navigate to the directory where Sysmon is extracted.
+7. Place the `sysmonconfig.xml` file in the same directory where Sysmon is extracted.
+8. Run the command to install Sysmon with a basic configuration:
+
+``` .\Sysmon64.exe -i .\sysmonconfig.xml ```
+
+![9](https://github.com/FrezsSec/Setting-Up-SOC-Automation-with-Wazuh-TheHive-and-Shuffle/assets/173344802/37251597-a518-4c87-849a-5f4a5795a9d4)
+
+
+7. Verify that Sysmon has been installed correctly by checking the Services application.
