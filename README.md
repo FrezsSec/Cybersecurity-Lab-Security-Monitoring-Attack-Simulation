@@ -355,3 +355,23 @@ source = XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 
 9. Set a password.
 10. Continue clicking **Next** until you reach the **Install** button.
+
+Once the installation is complete, the server will automatically restart. After the restart, log back into the server. You will see the domain name on the login page, indicating that we have successfully installed Active Directory Domain Services (ADDS) and promoted our server to a domain controller.
+
+  ![48](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/6aadbe5d-122b-4cea-a18a-59b6c8ac2d4e)
+
+### Creating Users
+
+1. In Server Manager, click on "Tools" in the top right corner, then select **Active Directory Users and Computers**.
+2. Right-click on the domain, navigate to **New**, and select **Organizational Unit**. Name it, for example, "IT".
+
+   ![49](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/1610acce-f4f8-4aff-aa48-6e2469a10c5e)
+
+3. Right-click on the "IT" unit, then under "New", select **User**.
+4. Create a username and password for the new user.
+
+   ![50](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/44413aa5-061a-4da3-840a-a5d54c2dae38)
+
+5. Create another organizational unit named "HR", and create a new user account within this unit.
+
+   
