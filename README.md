@@ -494,6 +494,8 @@ Now we proceed with our brute force attack:
   2. Select "Search & Reporting".
   3. Narrow down the search for events related to the user `tsmith` within the `endpoint index`, focusing on the last 15 minutes.
 
-     
-
+    
+  ![63](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/421ecec7-8638-4d71-8ba2-56e563f891a7)
+  
+  4. Click on the EventCode on the left
 
