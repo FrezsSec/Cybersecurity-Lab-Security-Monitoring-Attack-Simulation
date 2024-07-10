@@ -319,7 +319,7 @@ source = XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 2. Install the Splunk Universal Forwarder and configure the `inputs.conf` file the same way as on the target Windows machine.
 3. Then, go to the Splunk server web portal at `192.168.10.10:8000`, click on "Apps" in the top left corner, and select "Search & Reporting." Under the search bar, type `index=endpoint`. This time, you will see two hosts.
 
-   ![39](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/b4cede0a-56d6-47e6-b51c-38793569c36a)
+   ![69](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/064f151a-da52-4a42-9259-01131f55508b)
 
 
 ## Installing Sysmon 
@@ -511,3 +511,18 @@ Now we proceed with our brute force attack:
 - We can expand the event and scroll down to see that the workstation is identified as "kali," along with the IP address from which the login attempt was made.
 
      ![67](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/98fbca16-0b6a-438e-a8c8-f0f54f7b9f2a)
+
+## Installing Atomic Red Team on Windows Target
+
+1. Open PowerShell with administrator privileges on the Windows target. Log in with an administrative account, and run the following command:
+
+   ```sh
+   Set-ExecutionPolicy Bypass CurrentUser
+   ```
+2. Before installing the Atomic Red Team, we are going to set an exclusion for the entire C drive, as Microsoft Defender may detect and remove some of the files. To do this, go to Windows Security → Virus & threat protection → Manage settings. Under Exclusions, add a folder exclusion and select the C drive.
+3. To install Atomic Red Team, use the following command:
+
+   ```sh
+   Install-AtomicRedTeam -getAtomics
+   ```
+   
