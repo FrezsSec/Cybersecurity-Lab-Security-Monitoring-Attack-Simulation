@@ -488,4 +488,12 @@ Now we proceed with our brute force attack:
 
    ![61](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/ee51aed8-4d85-44a9-b9a9-77abfa301f5c)
 
+## Analyzing Telemetry Data in Splunk
+
+  1. Head over to the Splunk server web portal at http://192.168.10.10:8000 and log in with your credentials.
+  2. Select "Search & Reporting".
+  3. Narrow down the search for events related to the user `tsmith` within the `endpoint index`, focusing on the last 15 minutes.
+
+     
+
 
