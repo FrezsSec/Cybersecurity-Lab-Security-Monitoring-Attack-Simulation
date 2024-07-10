@@ -490,12 +490,24 @@ Now we proceed with our brute force attack:
 
 ## Analyzing Telemetry Data in Splunk
 
-  1. Head over to the Splunk server web portal at http://192.168.10.10:8000 and log in with your credentials.
-  2. Select "Search & Reporting".
-  3. Narrow down the search for events related to the user `tsmith` within the `endpoint index`, focusing on the last 15 minutes.
+  - Head over to the Splunk server web portal at http://192.168.10.10:8000 and log in with your credentials.
+  - Select "Search & Reporting".
+  - Narrow down the search for events related to the user `tsmith` within the `endpoint index`, focusing on the last 15 minutes.
 
-    
-  ![63](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/421ecec7-8638-4d71-8ba2-56e563f891a7)
+     ![68](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/fe286603-6282-4500-a5a8-130ef06e7161)
   
-  4. Click on the EventCode on the left
+  - Click on the EventCode on the left. You will see a total count of 20 events with Event ID 4625, indicating 20 failed login attempts for the user tsmith.
 
+     ![64](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/1c7b6bb4-c4df-44f1-8a53-faf0cf98e6c5)
+
+  - We select Event ID 4625, and upon scrolling down, we notice that all the events occurred nearly simultaneously, which is a clear indication of brute-force activity.
+
+     ![65](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/dc60f486-4383-4bb4-b92a-0dbcdfdad045)
+
+- Now let's take a look at Event Code 4624, where we have one event indicating a successful account login.
+
+     ![66](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/92cdf6d2-c0b2-4b0e-92bb-2926ac344f3a)
+
+- We can expand the event and scroll down to see that the workstation is identified as "kali," along with the IP address from which the login attempt was made.
+
+     ![67](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/98fbca16-0b6a-438e-a8c8-f0f54f7b9f2a)
