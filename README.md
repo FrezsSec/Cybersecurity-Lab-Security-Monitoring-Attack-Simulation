@@ -316,7 +316,7 @@ source = XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 
 ``` .\Sysmon64.exe -i .\sysmonconfig.xml ```
 
-![9](https://github.com/FrezsSec/Setting-Up-SOC-Automation-with-Wazuh-TheHive-and-Shuffle/assets/173344802/37251597-a518-4c87-849a-5f4a5795a9d4)
+   ![9](https://github.com/FrezsSec/Setting-Up-SOC-Automation-with-Wazuh-TheHive-and-Shuffle/assets/173344802/37251597-a518-4c87-849a-5f4a5795a9d4)
 
 9. Verify that Sysmon has been installed correctly by checking the Services application.
 
@@ -358,7 +358,7 @@ source = XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 
 Once the installation is complete, the server will automatically restart. After the restart, log back into the server. You will see the domain name on the login page, indicating that we have successfully installed Active Directory Domain Services (ADDS) and promoted our server to a domain controller.
 
-  ![48](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/6aadbe5d-122b-4cea-a18a-59b6c8ac2d4e)
+   ![48](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/6aadbe5d-122b-4cea-a18a-59b6c8ac2d4e)
 
 ### Creating Users
 
@@ -374,4 +374,44 @@ Once the installation is complete, the server will automatically restart. After 
 
 5. Create another organizational unit named "HR", and create a new user account within this unit.
 
-   
+### Joining Windows 10 to the Domain
+
+1. On the Windows 10 machine, search for "PC" and go to Properties.
+2. Scroll down and select "Advanced system settings".
+3. Go to the "Computer Name" tab, select "Change".
+4. Select "Domain" and type your domain name.
+
+   ![51](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/c11a5f29-faca-45f5-9e60-34308bb84190)
+
+#### Troubleshooting Domain Connection Issues
+
+If you get an error stating that an Active Directory Domain Controller for the domain could not be contacted, it is likely because your target machine does not know how to resolve the .local domain. To fix this:
+
+    ![52](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/ad661cc2-d03d-4744-a595-9f938ab4e0d2)
+
+ - Open "Network & Internet Settings".
+ - Select "Change adapter options".
+ - Right-click on the network adapter and select "Properties".
+ - Double-click "Internet Protocol Version 4 (TCP/IPv4)".
+ - Change the DNS server to the IP address of your domain controller.
+ - Hit "OK".
+
+   ![53](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/85f4549c-592d-4a5c-97db-787d615f2ef5)
+
+#### Completing Domain Join
+
+After updating the DNS settings, continue with the steps to join the Windows 10 machine to the domain:
+
+ - Select "Domain" and type your domain name.
+ - You will be prompted to provide a username and password. Use the administrator account credentials of the server to log in.
+ - Once authenticated, restart the Windows 10 machine to apply the changes and join the domain successfully.
+
+#### Logging in with a Domain User
+
+After restarting the Windows 10 machine:
+
+ - Once you reach the log on screen, select "Other User".
+ - Ensure that the "Sign in to" field points to your domain.
+ - Log in with the newly created user credentials in the domain.
+
+This will allow you to access the Windows 10 machine as a domain user.
