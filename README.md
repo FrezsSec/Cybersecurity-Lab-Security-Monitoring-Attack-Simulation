@@ -157,7 +157,28 @@ To create a NAT network and configure network settings in VirtualBox for ensurin
 
   ![37](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/79f4d29b-0464-4154-86a6-550a62500934)
 
-  
+#### Kali Linux
+
+1. Right-click on the ethernet icon at the top of the screen and select "Edit Connections".
+
+   ![58](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/a522ba5f-3887-4e00-995f-3b67ae755718)
+
+
+3. Choose the first profile from the list.
+4. Click on the cog icon at the bottom left.
+
+   ![56](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/af07cfb8-90c0-41af-aa8a-749432134c86)
+
+
+6. Select the "IPv4 Settings" tab.
+7. Set the method to "Manual" and add the desired IP address.
+
+   ![57](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/548d9acd-163c-4b93-84a8-a9397abd9872)
+
+9. Click "Save".
+10. Click on the ethernet icon again, disconnect and then reconnect.
+11. Run ifconfig to check the IP address configuration
+
 ## Installing Splunk
 
 1. On your host machine, navigate to [splunk.com](https://www.splunk.com/), sign up, and log in.
@@ -415,3 +436,6 @@ After restarting the Windows 10 machine:
  - Log in with the newly created user credentials in the domain.
 
 This will allow you to access the Windows 10 machine as a domain user.
+
+
+## 
