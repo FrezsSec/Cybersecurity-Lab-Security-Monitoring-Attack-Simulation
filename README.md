@@ -562,5 +562,27 @@ After running the atomic test to create a local account, telemetry data is gener
   index=endpoint EventCode=4720
   ```
 
-   ![73](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/ee360b60-8570-4ab2-adb6-783bc4ce0ef9)
+  ![73](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/ee360b60-8570-4ab2-adb6-783bc4ce0ef9)
+
+### Testing Command and Scripting Interpreter: PowerShell (T1059.001)
+
+- Attackers leverage PowerShell for a variety of actions, including information gathering and command execution. To test this tactic, execute the following command:
+
+  ```sh
+  Invoke-AtomicTest T1059.001
+  ```
+   
+   ![75](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/26ce2826-3847-47b2-bb0f-31fb8b75e1ca)
+
+
+- Back in Splunk, search for `index=endpoint powershell`
+
+  ![76](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/a836df35-2b4e-4294-ae57-9230cccf58a7)
+
+
+### Cleanup Process
+
+- It's crucial to tidy up after simulating various techniques. The Invoke-AtomicRedTeam module also provides a Cleanup parameter (`-Cleanup`) to execute commands that remove all traces left by the tests.
+
+   ![77](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/68e7b0a4-4138-4780-b38f-b5fb037d7055)
 
