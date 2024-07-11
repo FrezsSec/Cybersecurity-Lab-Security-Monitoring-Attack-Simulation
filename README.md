@@ -586,3 +586,8 @@ After running the atomic test to create a local account, telemetry data is gener
 
    ![77](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/68e7b0a4-4138-4780-b38f-b5fb037d7055)
 
+# Summary
+
+This project provides a detailed walkthrough for building a cybersecurity lab environment. From setting up virtualization with VirtualBox to installing and configuring operating systems, security monitoring tools like Sysmon and Splunk, and conducting attack simulations using Atomic Red Team and Kali Linux, each step is aimed at creating a realistic environment for testing and understanding various cybersecurity tactics and techniques.
+
+Big thanks to [MyDFIR](https://www.youtube.com/@MyDFIR) for his awesome cybersecurity content that really helped me out with this project!
