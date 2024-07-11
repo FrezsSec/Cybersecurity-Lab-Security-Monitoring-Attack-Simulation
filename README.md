@@ -523,6 +523,44 @@ Now we proceed with our brute force attack:
 3. To install Atomic Red Team, use the following command:
 
    ```sh
-   Install-AtomicRedTeam -getAtomics
+   IEX (IWR 'https://raw.githubusercontent.com/redcanaryco/invoke-atomicredteam/master/install-atomicredteam.ps1' -UseBasicParsing);
    ```
+   ```sh
+   Install-AtomicRedTeam -getAtomics -Force
+   ```
+   ```sh
+   Import-Module "C:\AtomicRedTeam\invoke-atomicredteam\Invoke-AtomicRedTeam.psd1" -Force
+   ```
+4. Once the installation is complete, navigate to the C:\ drive. Go to the `AtomicRedTeam` directory and then click on atomics. You will see a bunch of technique IDs that map back to the [MITRE ATT&CK](https://attack.mitre.org/) framework. You can aslo list them via the command:
+   ```sh
+   Invoke-AtomicTest All -ShowDetailsBrief
+   ```
+   ![71](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/259a735a-8654-4c9f-b285-8bf72aa27287)
+
    
+### Testing a Persistence Tactic: Creating a Local Account (T1136.001)
+
+- Open PowerShell with Administrator privileges.
+- Run:
+  ```sh
+  Invoke-AtomicTest T1136.001
+  ```
+  ![72](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/f73ff9b9-7c1b-4d4d-8b78-9d14d459d111)
+
+#### Verifying Telemetry for Created Local Account
+
+After running the atomic test to create a local account, telemetry data is generated and can be viewed in Splunk. Follow these steps to search for the new user account `NewLocalUser` in Splunk:
+- Navigate to the Splunk web interface (e.g., `http://192.168.10.10:8000`).
+- In the search bar, enter the following query to find events related to the newly created user `NewLocalUser`:
+
+  ```sh
+  index=endpoint NewLocalUser
+  ```
+   or
+  
+  ```sh
+  index=endpoint EventCode=4720
+  ```
+
+   ![73](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/ee360b60-8570-4ab2-adb6-783bc4ce0ef9)
+
