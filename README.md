@@ -21,7 +21,7 @@ I have successfully built a lab environment centered around Active Directory, Sp
 
 # Installation Guide
 
-In this section, we will cover the installation steps for each component of our SOC automation setup.
+In this section, we will cover the installation steps for each component of our lab.
 
 ## Installing VirtualBox on Windows
 
@@ -408,7 +408,7 @@ Once the installation is complete, the server will automatically restart. After 
 
 If you get an error stating that an Active Directory Domain Controller for the domain could not be contacted, it is likely because your target machine does not know how to resolve the .local domain. To fix this:
 
-    ![52](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/ad661cc2-d03d-4744-a595-9f938ab4e0d2)
+![52](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/ad661cc2-d03d-4744-a595-9f938ab4e0d2)
 
  - Open "Network & Internet Settings".
  - Select "Change adapter options".
@@ -480,7 +480,7 @@ This will allow you to access the Windows 10 machine as a domain user.
 
 Now we proceed with our brute force attack:
 
-5. Launch Crowbar and perform a brute-force attack on the target Windows machine using the RDP protocol.
+6. Launch Crowbar and perform a brute-force attack on the target Windows machine using the RDP protocol.
 
     ```sh
     sudo crowbar -b rdp -u <username> -C passwords.txt -s <Target_IP>
@@ -496,7 +496,7 @@ Now we proceed with our brute force attack:
 
      ![68](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/fe286603-6282-4500-a5a8-130ef06e7161)
   
-  - Click on the EventCode on the left. You will see a total count of 20 events with Event ID 4625, indicating 20 failed login attempts for the user tsmith.
+  - Click on the EventCode on the left. You will see a total count of 20 events with Event ID **4625**, indicating 20 failed login attempts for the user tsmith.
 
      ![64](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/1c7b6bb4-c4df-44f1-8a53-faf0cf98e6c5)
 
@@ -582,12 +582,12 @@ After running the atomic test to create a local account, telemetry data is gener
 
 ### Cleanup Process
 
-- It's crucial to tidy up after simulating various techniques. The Invoke-AtomicRedTeam module also provides a Cleanup parameter (`-Cleanup`) to execute commands that remove all traces left by the tests.
+- It's crucial to clean up after simulating various techniques. The Invoke-AtomicRedTeam module also provides a Cleanup parameter (`-Cleanup`) to execute commands that remove all traces left by the tests.
 
    ![77](https://github.com/FrezsSec/Building-a-Cybersecurity-Lab-Active-Directory-Splunk-Atomic-Red-Team-and-Kali-Linux-Integration/assets/173344802/68e7b0a4-4138-4780-b38f-b5fb037d7055)
 
 # Summary
 
-This project provides a detailed walkthrough for building a cybersecurity lab environment. From setting up virtualization with VirtualBox to installing and configuring operating systems, security monitoring tools like Sysmon and Splunk, and conducting attack simulations using Atomic Red Team and Kali Linux, each step is aimed at creating a realistic environment for testing and understanding various cybersecurity tactics and techniques.
+This project provides a detailed walkthrough for building a cybersecurity lab environment. From setting up virtualization with VirtualBox to installing and configuring operating systems, security monitoring tools like Sysmon and Splunk, and conducting attack simulations using Atomic Red Team and Kali Linux, we successfully monitored and analyzed the events generated for each attack in Splunk.
 
 Big thanks to [MyDFIR](https://www.youtube.com/@MyDFIR) for his awesome cybersecurity content that really helped me out with this project!
